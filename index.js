@@ -2,7 +2,6 @@
 const fs = require('fs')
 const express =  require('express')
 const app = express()
-const client = require('https');
 const path = require('path')
 
 app.get("/photo", (req,res) => {
@@ -12,8 +11,6 @@ fs.readdir("./photos", (err,files) => {
     res.sendFile(path.join(__dirname , "/photos", randomthing))
 })
 })
-
-
 
 app.get("/gif", (req,res) => {
     fs.readdir("./gifs", (err,files) => {
